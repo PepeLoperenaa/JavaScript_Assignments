@@ -1,18 +1,19 @@
-var array = ["apple", "banana", "pear", "chicken", "fish", "corn", "chips", "potato", "salt", "pepper"];
+//the array where results are stored
+var array = ["apple", "banana", "pear", "chicken", "fish", "corn", "chips", "potato", "salt", "pepper"]; 
 
-var arrayLength = array.length;
+var arrayLength = array.length; // variable for the array length. 
 
 for(var j = 0; j < arrayLength; j++){
     document.write("<p>" + array[j] + "</p>");
-}
+} //for loop without the change
 
 document.write("After change: <br>");
 
-array[8] = "sugar";
+array[8] = "sugar"; //change of value
 
 for(var i = 0; i < arrayLength; i++){
     document.write("<p>" + array[i] + "</p>");
-}
+} //for loop with the change
 
 
 

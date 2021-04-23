@@ -1,1 +1,1 @@
-document.write("<p>Hello world</p>");
+document.write("<p>Hello world</p>"); //a simple hello world but with p tags so that editing occurs 
