@@ -1,3 +1,12 @@
+/*
+* this is how to construct an object in JS
+*/
+function director(name, age, work){
+    this.name = name; 
+    this.age = age;
+    this.work = new Array[10];
+}
+//How to create a single object with getters and setters inside.
 var director = {
     name: 'bla bla',
     age: 25,
@@ -13,5 +22,13 @@ var director = {
 
     getWorkDone: function(){
         return this.work;
+    },
+
+    setName: function(name){
+        this.name = name;
+    },
+
+    setAge: function(age){
+        this.age = age;
     }
 }

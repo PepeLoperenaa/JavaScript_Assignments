@@ -1,3 +1,14 @@
+/*
+* this is how to construct an object in JS
+*/
+function serie(name, epidode, stillRecording, cast){
+    this.name = name; 
+    this.epidode = epidode; 
+    this.stillRecording = stillRecording; 
+    this.cast = new Array[cast];
+}
+
+//How to create a single object with getters and setters inside. 
 var serie  = {
     name: 'The last kingdom', 
     episode : episodes,
@@ -22,16 +33,13 @@ var serie  = {
 
     setName: function (name){
         this.name = name; 
+    },
+
+    setEpisodes: function (epidode){
+        this.epidode = epidode; 
+    },
+
+    setContinue: function (Continue){
+        this.continue = this.continue; 
     }
-    
 };
-
-function Person(name, apellido){ //constructor to do after. 
-    this.name =  name;
-    this.apellido = apellido;
-    this.getApellido = function() {
-        return this.apellido;
-    }
-}
-
-var  p= new Person("","");
