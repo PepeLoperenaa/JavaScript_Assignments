@@ -1,6 +1,5 @@
-function Palindrome(string){ //constructor to do after. 
+function Palindrome(string){ 
     this.string = string;
-
     this.isPalindrome = function(){
         let status = true;
         for (let index = 0; index < string.length; index++) {
