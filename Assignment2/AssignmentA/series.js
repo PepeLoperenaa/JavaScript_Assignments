@@ -1,6 +1,6 @@
-var series  = {
+var serie  = {
     name: 'The last kingdom', 
-    episodes : episodes,
+    episode : episodes,
     continue : true, 
     cast : cast,
 
@@ -19,6 +19,19 @@ var series  = {
     getCast: function(){
         return this.cast;
     },
+
+    setName: function (name){
+        this.name = name; 
+    }
     
 };
 
+function Person(name, apellido){ //constructor to do after. 
+    this.name =  name;
+    this.apellido = apellido;
+    this.getApellido = function() {
+        return this.apellido;
+    }
+}
+
+var  p= new Person("","");
