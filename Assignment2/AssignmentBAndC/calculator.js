@@ -1,5 +1,5 @@
 
- function Calculator(){  
+ function Calculator(){  //object of calculator
     this.value =  0;
 
     getValue = function(){
@@ -34,6 +34,10 @@
         return (1.0 / value);
     };
 }
+/**
+ * Calling the methods and new calculator objects with testing values
+ */
+
 
 var cAdd = new Calculator();
 console.log(cAdd.getValue());
