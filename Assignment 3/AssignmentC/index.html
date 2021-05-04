@@ -4,14 +4,12 @@
         <title>Fortune Cookie Teller</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="main.css">
-       
-    </head>
-    <body>
-        <img name="slide" width="400" height="200" id="pic1" src="">
-        <button onclick="im.nextSlide(-1)">Previous</button>
-        <button onclick="im.nextSlide(1)">Next</button>
         <script type="text/javascript" src = "slides.js">
         </script> 
+    </head>
+    <body onload="window.setInterval(next, 2000)">
+        <img name="slide" width="400" height="200" id="pic1" src="img/brain.jpg">
+        
     </body>
        
 </html>
