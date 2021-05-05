@@ -31,6 +31,7 @@ $(function() {
     });
 
     $('.item').on('click', function() {
+        $(this).parent().toggleClass("strike");
         // coger el indice que es dentro de la lista
 
         // ponerle setDone
