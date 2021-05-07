@@ -21,7 +21,7 @@ function Item(text) {
 $(function() {
     
     $('#button').on('click', function() {
-        $('#todo').append("<li><input type='text' id='current'></input></li>");
+        $('#todo').append("<li><input type='text' id='current'></input></li>"); //input
         $('#current').focus();
         $('#current').on('focusout', function() {
             items.push(new Item(this.value));
@@ -30,14 +30,14 @@ $(function() {
         })
     });
 
-    $('.item').on('click', function() {
-        $(this).parent().toggleClass("strike");
-        // coger el indice que es dentro de la lista
+    $('#todo').on('click','li', function() {
+        $(this).remove(); //works for now
+        
+    });
+    // coger el indice que es dentro de la lista
 
         // ponerle setDone
 
         // si setdone == true, entonces lo subrayo
-        this.style.text=subrayado;
-    });
-
+        //this.style.text=subrayado;
 });
