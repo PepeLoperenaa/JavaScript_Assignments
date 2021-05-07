@@ -30,9 +30,9 @@ $(function() {
         })
     });
 
-    $('#todo').on('click','li', function() {
-        $(this).remove(); //works for now
-        
+    $('#todo').on('click','li', function() { //need to remove after strike. 
+        $(this).wrap("<strike>");
+        //$(this).remove;
     });
     // coger el indice que es dentro de la lista
 
