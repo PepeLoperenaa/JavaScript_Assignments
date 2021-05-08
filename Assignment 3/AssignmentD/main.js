@@ -19,7 +19,6 @@ function Item(text) {
 }
 
 $(function() {
-    
     $('#button').on('click', function() {
         $('#todo').append("<li><input type='text' id='current'></input></li>"); //input
         $('#current').focus();
