@@ -1,4 +1,4 @@
-var programming_languages = ["java", "csharp", "html", "javascript", "php", "python", "nosql", "mysql"];
+var programming_languages = ["java", "csharp", "html", "javascript", "php", "python", "nosql", "mysql", "mongodb", "ruby"];
 
 let answer = '';
 let maxWrong = 6;
@@ -6,11 +6,11 @@ let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
 
-function randWord() {
+function randWord() { //randomising array. 
     answer = programming_languages[Math.floor(Math.random() * programming_languages.length)];
 }
 
-function generateButtons() {
+function generateButtons() { //Creating the alphabet with buttons
     let buttonsHTML = 'abcdefghijklmnopqrstuwxyz'.split('').map(letter =>
         `
             <button 
@@ -25,17 +25,17 @@ function generateButtons() {
     document.getElementById('keyboard').innerHTML = buttonsHTML;
 }
 
-function guessedWord() {
+function guessedWord() { //function to guess the words. 
     wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
 
     document.getElementById('wordSpotlight').innerHTML = wordStatus;
 }
 
-function updateMistakes() {
+function updateMistakes() { //updating the counter of mistakes
     document.getElementById('mistakes').innerHTML = mistakes
 }
 
-function handleGuess(chosenLetter) {
+function handleGuess(chosenLetter) { //get the chosen letter and see if it is correct. 
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null; //lambda
     document.getElementById(chosenLetter).setAttribute('disabled', true);
 
@@ -50,24 +50,24 @@ function handleGuess(chosenLetter) {
     }
 }
 
-function updateHangmanPicture() {
+function updateHangmanPicture() { //when there is a mistake, update the image. 
     document.getElementsById('hangman_pic').src = './images/' + mistakes + '.jpg';
 }
 
-function checkIfGameLost() {
+function checkIfGameLost() { //checking if the game has lost
     if (mistakes === maxWrong) {
         document.getElementById('wordSpotlight').innerHTML = "The answer was: " + answer;
         document.getElementById('keyboard').innerHTML = 'You lost >:|';
     }
 }
 
-function checkIfGameWon() {
+function checkIfGameWon() { //checking if the game has won.
     if (wordStatus === answer) {
         document.getElementById('keyboard').innerHTML = 'You have won this game of hangman!!';
     }
 }
 
-function reset() {
+function reset() { //reseting thr game
     mistakes = 0;
     guessed = [];
     document.getElementById('hangman_pic').src = './images/0.jpg';
@@ -78,7 +78,7 @@ function reset() {
     generateButtons();
 }
 
-document.getElementById('maxWrong').innerHTML = maxWrong;
+document.getElementById('maxWrong').innerHTML = maxWrong; //number of wrong answers
 
 randWord();
 generateButtons();
