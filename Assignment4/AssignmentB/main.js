@@ -51,7 +51,7 @@ function handleGuess(chosenLetter) { //get the chosen letter and see if it is co
 }
 
 function updateHangmanPicture() { //when there is a mistake, update the image. 
-    document.getElementsById('hangman_pic').src = './images/' + mistakes + '.jpg';
+    document.getElementById('hangman_pic').src = './images/' + mistakes + '.jpg';
 }
 
 function checkIfGameLost() { //checking if the game has lost
@@ -83,4 +83,3 @@ document.getElementById('maxWrong').innerHTML = maxWrong; //number of wrong answ
 randWord();
 generateButtons();
 guessedWord();
-handleGuess();

@@ -29,14 +29,13 @@ $(function() {
         })
     });
 
-    $('#todo').on('click','li', function() { //need to remove after strike. 
-        $(this).wrap("<strike>");
-        //$(this).remove;
+    $('#todo').on('click','li', function(e) { //need to remove after strike. 
+        $(this).contents().wrap("<strike>");
+        let idx = $(this).index(); //get index of this li
+        let done = items[idx].setDone();
+        if(!done) {
+            $(this).remove();   // delete element from DOM
+            items.splice(idx, 1); //delete element from array
+        }
     });
-    // coger el indice que es dentro de la lista
-
-        // ponerle setDone
-
-        // si setdone == true, entonces lo subrayo
-        //this.style.text=subrayado;
 });
