@@ -11,7 +11,7 @@ function randWord() { //randomising array.
 }
 
 function generateButtons() { //Creating the alphabet with buttons
-    let buttonsHTML = 'abcdefghijklmnopqrstuwxyz'.split('').map(letter =>
+    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter => //using map, we split and create buttons for different values. 
         `
             <button 
             class = "btn btn-lg btn-primary m-2"
@@ -26,7 +26,7 @@ function generateButtons() { //Creating the alphabet with buttons
 }
 
 function guessedWord() { //function to guess the words. 
-    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
+    wordStatus = answer.split('').map(letter => (guessed.indexOf(letter) >= 0 ? letter : " _ ")).join(''); //use of ternary operator. An if statement could be used. 
 
     document.getElementById('wordSpotlight').innerHTML = wordStatus;
 }
@@ -36,13 +36,13 @@ function updateMistakes() { //updating the counter of mistakes
 }
 
 function handleGuess(chosenLetter) { //get the chosen letter and see if it is correct. 
-    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null; //lambda
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null; //ternary operator again.
     document.getElementById(chosenLetter).setAttribute('disabled', true);
 
     if (answer.indexOf(chosenLetter) >= 0) { //if it is true
         guessedWord();
         checkIfGameWon();
-    } else if (answer.indexOf(chosenLetter) === -1) {
+    } else if (answer.indexOf(chosenLetter) === -1) { //strict equals false
         mistakes++;
         updateMistakes();
         checkIfGameLost();
@@ -51,7 +51,7 @@ function handleGuess(chosenLetter) { //get the chosen letter and see if it is co
 }
 
 function updateHangmanPicture() { //when there is a mistake, update the image. 
-    document.getElementById('hangman_pic').src = './images/' + mistakes + '.jpg';
+    document.getElementById('hangman_pic').src = './images/' + mistakes + '.jpg'; //img and mistakes go up to 6. 
 }
 
 function checkIfGameLost() { //checking if the game has lost
